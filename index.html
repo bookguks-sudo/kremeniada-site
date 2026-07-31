@@ -31,7 +31,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0a0c;--bg-light:#111114;--gold:#d4af37;--gold-light:#f0d060;--bronze:#b87333;--bronze-light:#cd853f;--silver:#c0c0c0;--text:#fff;--text-dim:#ddd;--text-muted:#aaa;--font-display:'Oswald',sans-serif;--font-body:'Montserrat',sans-serif;--font-mono:'IBM Plex Mono',monospace}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;min-height:100vh}
 
 /* ФОН — промышленный, еще светлее */
 .bg-layers{position:fixed;inset:0;z-index:-2;pointer-events:none}
@@ -40,7 +40,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflo
 .bg-layer:nth-child(2){background-image:linear-gradient(225deg,rgba(212,175,55,.18) 0%,transparent 50%),url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=80')}
 .bg-layer:nth-child(3){background-image:linear-gradient(45deg,rgba(192,192,192,.14) 0%,transparent 50%),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80')}
 .bg-layer:nth-child(4){background-image:linear-gradient(315deg,rgba(184,115,51,.2) 0%,transparent 50%),url('https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1920&q=80')}
-.bg-overlay{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(10,10,14,.15) 0%,rgba(10,10,14,.35) 100%);pointer-events:none}
+.bg-overlay{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(10,10,14,.10) 0%,rgba(10,10,14,.30) 100%);pointer-events:none}
 .bg-noise{position:fixed;inset:0;z-index:-1;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
 
 /* ШАПКА */
@@ -49,7 +49,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflo
 .logo img{height:48px;width:auto;border-radius:4px}
 
 /* ЕДИНЫЙ МЕТАЛЛИЧЕСКИЙ СТИЛЬ для названий */
-.metal-text{font-family:var(--font-display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#8B4513 0%,#DAA520 20%,#FFD700 40%,#fff 55%,#FFD700 70%,#DAA520 85%,#8B4513 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 8px rgba(212,175,55,.3))}
+.metal-text{font-family:var(--font-display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#8B4513 0%,#CD853F 18%,#DAA520 35%,#FFD700 50%,#DAA520 65%,#CD853F 82%,#8B4513 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 8px rgba(212,175,55,.3))}
 
 .logo-text{font-size:26px}
 .nav{display:flex;align-items:center;gap:28px}
@@ -67,8 +67,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflo
 
 /* HERO — заголовок в стиле логотипа */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;position:relative}
-.metal-title{font-family:var(--font-display);font-size:clamp(56px,13vw,170px);font-weight:700;line-height:1;letter-spacing:.04em;text-transform:uppercase;background:linear-gradient(135deg,#8B4513 0%,#DAA520 15%,#FFD700 30%,#fff 45%,#FFD700 60%,#DAA520 75%,#8B4513 100%);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:metalShine 5s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(212,175,55,.4)) drop-shadow(0 0 70px rgba(184,115,51,.25));margin-bottom:24px}
-@keyframes metalShine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.metal-title{font-family:var(--font-display);font-size:clamp(56px,13vw,170px);font-weight:700;line-height:1;letter-spacing:.04em;text-transform:uppercase;background:linear-gradient(135deg,#8B4513 0%,#CD853F 15%,#DAA520 30%,#FFD700 45%,#DAA520 60%,#CD853F 75%,#8B4513 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 30px rgba(212,175,55,.4)) drop-shadow(0 0 70px rgba(184,115,51,.25));margin-bottom:24px}
 .hero-subtitle{font-family:var(--font-display);font-size:clamp(26px,4vw,44px);color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;text-shadow:0 0 25px rgba(212,175,55,.35)}
 .hero-subtitle2{font-family:var(--font-body);font-size:clamp(18px,2.5vw,28px);color:var(--text);font-weight:400;letter-spacing:.08em;text-shadow:0 0 15px rgba(0,0,0,.8)}
 
@@ -130,7 +129,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflo
 /* О ПРОЕКТЕ — по центру */
 .about-box{padding:48px;text-align:center}
 .about-title{font-family:var(--font-display);font-size:36px;color:var(--gold);margin-bottom:24px;letter-spacing:.08em;text-align:center}
-.about-text{font-family:var(--font-body);font-size:17px;color:var(--text-dim);line-height:1.8;max-width:800px;margin:0 auto;text-align:center}
+.about-text{font-family:var(--font-body);font-size:17px;color:var(--text-dim);line-height:2.0;max-width:720px;margin:0 auto;text-align:center}
 .about-text p{margin-bottom:16px}
 
 /* АНИМАЦИИ */
