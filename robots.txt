@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+Sitemap: https://bookguks-sudo.github.io/kremeniada-site/sitemap.xml
+
+# Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+
+User-agent: Yandex
+Allow: /
+Host: https://bookguks-sudo.github.io/kremeniada-site/
+
+User-agent: Bingbot
+Allow: /
